@@ -1,0 +1,40 @@
+### Defining Regex Variables ###
+
+When using regex variables in any of the sections of the program they are to be defined using <var name> such as:
+
+Hello <Name> I was wondering when you expect to have <task>.
+
+### Subject cloning ###
+
+As outlined in the descriptions to use a subject line again you must place (number) in the line corresponding to the line and thereby the person you want to send the email to.
+
+The program enumerates email addresses, subject lines, and email contents between 2 /\p's and sends all of the contents with the same number to the same person.
+
+
+If the email address line looked like this,
+
+contoso@onmicrosoft.com
+John_kim@gmail.com
+Amber_C@outlook.com
+
+and the subject lines looked like this,
+
+Lunch
+Updates
+Friday plans
+
+the first email adress recieves the first subject line and so on.
+
+now if the subject lines looked like this.
+
+Lunch
+()
+()
+
+all three people recieve the same subject. However including a blank paranthesis before a subject such as,
+
+()
+lunch
+()
+
+will send the first email without a subject.
