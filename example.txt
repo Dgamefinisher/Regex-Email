@@ -3,6 +3,7 @@
 When using regex variables in any of the sections of the program they are to be defined using <var name> such as:
 
 Hello <Name> I was wondering when you expect to have <task>.
+where <Name> and <task> are the variables (not-case sensitive)
 
 ### Subject cloning ###
 
