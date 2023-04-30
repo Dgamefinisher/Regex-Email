@@ -1,3 +1,4 @@
+For ease of reading please turn on line wrap.
 ### Defining Regex Variables ###
 
 When using regex variables in any of the sections of the program they are to be defined using <var name> such as:
@@ -7,14 +8,14 @@ where <Name> and <task> are the variables (not-case sensitive)
 
 ### Subject cloning ###
 
-As outlined in the descriptions to use a subject line again you must place (number) in the line corresponding to the line and thereby the person you want to send the email to.
+As outlined in the descriptions to use a subject line again you can utilize a variable encased in <> in the line corresponding to the line and thereby the person you want to send the email to.
 
-The program enumerates email addresses, subject lines, and email contents between 2 /\p's and sends all of the contents with the same number to the same person.
+The program enumerates email addresses, subject lines, and email contents with a newline as a delimiter and sends all of the contents with the same number to the same person.
 
 
 If the email address line looked like this,
 
-contoso@onmicrosoft.com
+contoso@onmicrosoft.azure.com
 John_kim@gmail.com
 Amber_C@outlook.com
 
@@ -25,17 +26,28 @@ Updates
 Friday plans
 
 the first email adress recieves the first subject line and so on.
+However the power of the script resides in the fact that variables can be used to send the same thing in multiple lines. For example say that I want to send an email to five different members of the same organization. Instead of typing out the lengthy email each time I could change it with a variable:
 
-now if the subject lines looked like this.
+Address List
+____________________________
+contoso@onmicrosoft.azure.com
+James-k@onmicrosoft.azure.com
+Filipe3@onmicrosoft.azure.com
+...
 
-Lunch
-()
-()
+Replaced with
+_____________________________
+contoso<mail>
+James-k<mail>
+Filipe3<mail>
 
-all three people recieve the same subject. However including a blank paranthesis before a subject such as,
+As long as the variables are defined in "Define Vars the switch will happen automagically"
 
-()
-lunch
-()
+### Defining Variables ###
 
-will send the first email without a subject.
+<Variable Name>: what the varible actually is
+
+due to limitations in variable buffer sizes of smaller chips there isn't currently support for variable stacking or defining variables using other variables. so you can't do the following:
+<Variable Name>:<Other Variable> cat
+
+Auto update script coming soon to https://github.com/Dgamefinisher/Regex-Email.
